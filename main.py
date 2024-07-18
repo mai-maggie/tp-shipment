@@ -1,4 +1,6 @@
-'''通过package箱唛自动填写excel模版'''
+'''通过package箱唛自动填写excel模版
+fill the template excel sheet by parsing package.pdf
+'''
 
 from openpyxl import load_workbook
 from pypdf import PdfReader
@@ -55,7 +57,7 @@ def fill_cell(data_dict,sku_dict):
     :param sku_dict: a dict. a dict of sku and its quantity
     :return: None
     """
-    wb = load_workbook('130001.xlsx')
+    wb = load_workbook('template.xlsx')
     ws = wb.active
 
     ws['B1'].value = data_dict["asin"]
